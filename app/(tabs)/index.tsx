@@ -1,6 +1,6 @@
 import { Image } from 'expo-image';
 import React from 'react';
-import { Platform, StyleSheet } from 'react-native';
+import { Platform, StyleSheet, ScrollView } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -18,9 +18,21 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title" className='bg-red-500'>Welcome!</ThemedText>
+        <ThemedText type="title" className="text-blue-600 bg-yellow-200 p-4 rounded-lg">
+          Welcome to Tailwind!
+        </ThemedText>
         <HelloWave />
       </ThemedView>
+      
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle" className="text-green-600 font-bold">
+          Tailwind CSS is Working! 🎉
+        </ThemedText>
+        <ThemedText className="text-gray-700 bg-blue-100 p-3 rounded-md">
+          This text demonstrates Tailwind CSS classes working in React Native.
+        </ThemedText>
+      </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
@@ -36,21 +48,45 @@ export default function HomeScreen() {
           to open developer tools.
         </ThemedText>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 2: Explore</ThemedText>
         <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
+          Tap the Explore tab to learn more about what's included in this starter app.
         </ThemedText>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
         <ThemedText>
-          {`When you're ready, run `}
+          When you're ready, run{' '}
           <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
           <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
           <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
+      </ThemedView>
+
+      {/* Tailwind Demo Section */}
+      <ThemedView className="bg-gradient-to-r from-purple-400 to-pink-400 p-6 rounded-xl mt-4">
+        <ThemedText className="text-white text-xl font-bold mb-2">
+          Tailwind Gradient Demo
+        </ThemedText>
+        <ThemedText className="text-white opacity-90">
+          This section uses Tailwind's gradient background classes!
+        </ThemedText>
+      </ThemedView>
+
+      <ThemedView className="flex-row justify-between mt-4 space-x-2">
+        <ThemedView className="flex-1 bg-red-100 p-4 rounded-lg">
+          <ThemedText className="text-red-800 font-semibold">Red Card</ThemedText>
+        </ThemedView>
+        <ThemedView className="flex-1 bg-green-100 p-4 rounded-lg">
+          <ThemedText className="text-green-800 font-semibold">Green Card</ThemedText>
+        </ThemedView>
+        <ThemedView className="flex-1 bg-blue-100 p-4 rounded-lg">
+          <ThemedText className="text-blue-800 font-semibold">Blue Card</ThemedText>
+        </ThemedView>
       </ThemedView>
     </ParallaxScrollView>
   );
